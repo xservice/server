@@ -1,10 +1,10 @@
 {
   "name": "@xservice/server",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "Page monitor and page behavior operation architecture",
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/fvaa/monitor.git"
+    "url": "git+ssh://git@github.com/xservice/server.git"
   },
   "keywords": [
     "history"
@@ -12,9 +12,9 @@
   "author": "cevio",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/fvaa/monitor/issues"
+    "url": "https://github.com/xservice/server/issues"
   },
-  "homepage": "https://github.com/fvaa/monitor#readme",
+  "homepage": "https://github.com/xservice/server#readme",
   "scripts": {
     "dev": "webpack-dev-server --open --hot --progress --history-api-fallback",
     "build": "rollup -c"
