@@ -27,6 +27,7 @@ export interface MonitorReference<T extends Context> {
   getCurrentRequest(): string,
   callback(...fns: StackFunction<T>[]): MonitorReference<T>,
   urlencodeWithPrefix(url: string): string,
+  urldecodeWithPrefix(url: string): string,
   generator<U = any>(
     url: string, 
     method: Methods, 
@@ -97,6 +98,12 @@ export default function Monitor<T extends Context>(options: MonitorArguments<T>)
       if (url.startsWith(reference.prefix)) return url;
       if (url.startsWith('/')) url = url.substring(1);
       return reference.prefix + url;
+    },
+
+    urldecodeWithPrefix(url) {
+      if (url.startsWith(reference.prefix)) url = url.substring(reference.prefix.length);
+      if (!url.startsWith('/')) url = '/' + url;
+      return url;
     },
 
     // Customize events and behaviors by throwing them 

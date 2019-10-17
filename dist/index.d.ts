@@ -22,6 +22,7 @@ export interface MonitorReference<T extends Context> {
     getCurrentRequest(): string;
     callback(...fns: StackFunction<T>[]): MonitorReference<T>;
     urlencodeWithPrefix(url: string): string;
+    urldecodeWithPrefix(url: string): string;
     generator<U = any>(url: string, method: Methods, force: Boolean | undefined | null, body: any, callback?: (e: VPCExpection | null, ctx: T) => Promise<any>): Promise<U>;
     listen(mapState?: {
         [router: string]: string;

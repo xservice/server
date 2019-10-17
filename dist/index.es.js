@@ -230,6 +230,13 @@ function Monitor(options) {
                 url = url.substring(1);
             return reference.prefix + url;
         },
+        urldecodeWithPrefix(url) {
+            if (url.startsWith(reference.prefix))
+                url = url.substring(reference.prefix.length);
+            if (!url.startsWith('/'))
+                url = '/' + url;
+            return url;
+        },
         // Customize events and behaviors by throwing them 
         // into a rule parsing function by customizing the address.
         async generator(url, method, force, body, callback) {
