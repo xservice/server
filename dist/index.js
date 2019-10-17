@@ -310,7 +310,7 @@ function Monitor(options) {
             return reference.bootstrap(mapState[path] || path);
         },
         bootstrap(url) {
-            url = reference.urlencodeWithPrefix(url);
+            url = reference.urldecodeWithPrefix(url);
             return reference.generator(url, 'router', false, null, async (err, ctx) => {
                 if (err) {
                     if (reference.error)
