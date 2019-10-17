@@ -170,7 +170,7 @@ export default function Monitor<T extends Context>(options: MonitorArguments<T>)
     },
 
     bootstrap(url: string) {
-      url = reference.urlencodeWithPrefix(url);
+      url = reference.urldecodeWithPrefix(url);
       return reference.generator(url, 'router', false, null, async (err, ctx) => {
         if (err) {
           if (reference.error) await Promise.resolve(reference.error(err, ctx));
